@@ -1,0 +1,83 @@
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background: white;
+    border-bottom: 1px solid #eee;
+}
+
+/* HERO */
+.hero {
+    text-align: center;
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #ffffff 0%, #eaf2ff 100%);
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero-tagline {
+    color: #2563eb;
+    font-weight: 600;
+}
+
+.hero-intro {
+    max-width: 600px;
+    margin: auto;
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #2563eb;
+    color: white;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #1d4ed8;
+    transform: scale(1.05);
+}
+
+/* SECTIONS */
+section {
+    max-width: 900px;
+    margin: auto;
+    padding: 60px 20px;
+}
+
+h2 {
+    text-align: center;
+}
+
+/* HIGHLIGHT */
+.highlight {
+    background: #f8fafc;
+    text-align: center;
+}
+
+/* PROJECT CARD */
+.project {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    transition: 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
