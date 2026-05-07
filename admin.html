@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard — Abhiram Madaka Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- ============================================================
+     LOGIN SCREEN
+============================================================ -->
+    <div class="login-screen" id="login-screen">
+        <div class="login-card">
+            <div class="login-logo">AM<span class="logo-dot">.</span></div>
+            <h1 class="login-title">Admin Dashboard</h1>
+            <p class="login-sub">Enter your password to continue</p>
+            <div class="login-form">
+                <div class="field-group">
+                    <label for="login-pass">Password</label>
+                    <input type="password" id="login-pass" placeholder="Enter password" autocomplete="current-password">
+                </div>
+                <div class="login-error" id="login-error">Incorrect password. Try again.</div>
+                <button class="admin-btn admin-btn--primary w-full" id="login-btn">Unlock Dashboard</button>
+            </div>
+            <p class="login-hint">Default password: <code>admin123</code></p>
+        </div>
+    </div>
+
+    <!-- ============================================================
+     ADMIN DASHBOARD
+============================================================ -->
+    <div class="admin-layout" id="admin-layout" style="display:none">
+
+        <!-- Sidebar -->
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">
+                <span class="sidebar-logo">AM<span class="logo-dot">.</span></span>
+                <span class="sidebar-title">Admin Panel</span>
+            </div>
+            <nav class="sidebar-nav">
+                <button class="nav-item active" data-tab="profile">
+                    <span class="nav-icon">👤</span> Profile
+                </button>
+                <button class="nav-item" data-tab="photo">
+                    <span class="nav-icon">🖼️</span> Profile Photo
+                </button>
+                <button class="nav-item" data-tab="projects">
+                    <span class="nav-icon">🚀</span> Projects
+                </button>
+                <button class="nav-item" data-tab="skills">
+                    <span class="nav-icon">⚡</span> Skills
+                </button>
+                <button class="nav-item" data-tab="contact">
+                    <span class="nav-icon">📬</span> Contact Links
+                </button>
+                <button class="nav-item" data-tab="stats">
+                    <span class="nav-icon">📊</span> Stats
+                </button>
+            </nav>
+            <div class="sidebar-footer">
+                <a href="index.HTML" target="_blank" class="view-site-btn">
+                    <span>👁️</span> View Portfolio
+                </a>
+                <button class="logout-btn" id="logout-btn">
+                    <span>🚪</span> Logout
+                </button>
+            </div>
+        </aside>
+
+        <!-- Mobile top bar -->
+        <div class="mobile-topbar">
+            <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+            <span class="sidebar-logo">AM<span class="logo-dot">.</span> Admin</span>
+        </div>
+
+        <!-- Main Content -->
+        <main class="admin-main" id="admin-main">
+
+            <!-- ── TOAST ── -->
+            <div class="toast" id="toast"></div>
+
+            <!-- ════════════════════════════════
+             TAB: PROFILE
+        ════════════════════════════════ -->
+            <section class="tab-panel active" id="tab-profile">
+                <div class="panel-header">
+                    <h2>Profile Information</h2>
+                    <p>These details appear in the hero section and about section of your portfolio.</p>
+                </div>
+                <div class="panel-body">
+                    <div class="form-grid">
+                        <div class="field-group">
+                            <label for="p-name">Full Name</label>
+                            <input type="text" id="p-name" placeholder="Abhiram Madaka">
+                        </div>
+                        <div class="field-group">
+                            <label for="p-greeting">Greeting Text</label>
+                            <input type="text" id="p-greeting" placeholder="Hello, I'm">
+                        </div>
+                        <div class="field-group span-2">
+                            <label for="p-tagline">Hero Tagline</label>
+                            <input type="text" id="p-tagline" placeholder="Future Embedded Engineer | Problem Solver">
+                        </div>
+                        <div class="field-group span-2">
+                            <label for="p-intro">Hero Introduction Text</label>
+                            <textarea id="p-intro" rows="3"
+                                placeholder="Short intro shown under your tagline..."></textarea>
+                        </div>
+                        <div class="field-group span-2">
+                            <label for="p-about1">About Section — Paragraph 1</label>
+                            <textarea id="p-about1" rows="4"
+                                placeholder="First paragraph of the About section..."></textarea>
+                        </div>
+                        <div class="field-group span-2">
+                            <label for="p-about2">About Section — Paragraph 2</label>
+                            <textarea id="p-about2" rows="3"
+                                placeholder="Second paragraph of the About section..."></textarea>
+                        </div>
+                        <div class="field-group span-2">
+                            <label for="p-email">Primary Email</label>
+                            <input type="email" id="p-email" placeholder="you@example.com">
+                        </div>
+                    </div>
+                    <div class="action-row">
+                        <button class="admin-btn admin-btn--primary" onclick="saveProfile()">💾 Save Profile</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ════════════════════════════════
+             TAB: PHOTO
+        ════════════════════════════════ -->
+            <section class="tab-panel" id="tab-photo">
+                <div class="panel-header">
+                    <h2>Profile Photo</h2>
+                    <p>Upload a photo to display in the hero and about sections. Replaces the initials "AM".</p>
+                </div>
+                <div class="panel-body">
+                    <div class="photo-upload-area" id="photo-drop-zone">
+                        <div class="photo-preview-wrap">
+                            <div class="photo-preview" id="photo-preview">
+                                <span class="photo-initials">AM</span>
+                            </div>
+                            <div class="photo-preview-ring"></div>
+                        </div>
+                        <div class="photo-upload-text">
+                            <p>Drop an image here or click to browse</p>
+                            <p class="hint-text">JPG, PNG, WEBP — max ~2MB recommended</p>
+                        </div>
+                        <input type="file" id="photo-input" accept="image/*" style="display:none">
+                        <div class="photo-action-row">
+                            <button class="admin-btn admin-btn--primary"
+                                onclick="document.getElementById('photo-input').click()">📂 Choose Photo</button>
+                            <button class="admin-btn admin-btn--danger" onclick="removePhoto()">🗑️ Remove
+                                Photo</button>
+                        </div>
+                    </div>
+                    <div class="action-row" style="margin-top:0">
+                        <button class="admin-btn admin-btn--primary" onclick="savePhoto()">💾 Save Photo</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ════════════════════════════════
+             TAB: PROJECTS
+        ════════════════════════════════ -->
+            <section class="tab-panel" id="tab-projects">
+                <div class="panel-header">
+                    <h2>Projects</h2>
+                    <p>Add, edit, or delete the projects shown on your portfolio.</p>
+                </div>
+                <div class="panel-body">
+                    <div class="action-row">
+                        <button class="admin-btn admin-btn--primary" onclick="openProjectModal()">➕ Add Project</button>
+                    </div>
+                    <div class="data-table-wrap">
+                        <table class="data-table" id="projects-table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Title</th>
+                                    <th>Tags</th>
+                                    <th>GitHub</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="projects-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ════════════════════════════════
+             TAB: SKILLS
+        ════════════════════════════════ -->
+            <section class="tab-panel" id="tab-skills">
+                <div class="panel-header">
+                    <h2>Skills & Tools</h2>
+                    <p>Manage the skills shown in the Skills section. Drag the slider to set proficiency level.</p>
+                </div>
+                <div class="panel-body">
+                    <div class="action-row">
+                        <button class="admin-btn admin-btn--primary" onclick="openSkillModal()">➕ Add Skill</button>
+                    </div>
+                    <div class="skills-admin-grid" id="skills-admin-grid"></div>
+                </div>
+            </section>
+
+            <!-- ════════════════════════════════
+             TAB: CONTACT
+        ════════════════════════════════ -->
+            <section class="tab-panel" id="tab-contact">
+                <div class="panel-header">
+                    <h2>Contact Links</h2>
+                    <p>Manage your contact / social media links shown on the portfolio.</p>
+                </div>
+                <div class="panel-body">
+                    <div class="action-row">
+                        <button class="admin-btn admin-btn--primary" onclick="openContactModal()">➕ Add Link</button>
+                    </div>
+                    <div class="data-table-wrap">
+                        <table class="data-table" id="contact-table">
+                            <thead>
+                                <tr>
+                                    <th>Icon</th>
+                                    <th>Label</th>
+                                    <th>Value</th>
+                                    <th>URL</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="contact-tbody"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ════════════════════════════════
+             TAB: STATS
+        ════════════════════════════════ -->
+            <section class="tab-panel" id="tab-stats">
+                <div class="panel-header">
+                    <h2>About Stats</h2>
+                    <p>The three stat boxes shown in the About section.</p>
+                </div>
+                <div class="panel-body">
+                    <div id="stats-fields"></div>
+                    <div class="action-row">
+                        <button class="admin-btn admin-btn--primary" onclick="saveStats()">💾 Save Stats</button>
+                    </div>
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ============================================================
+     MODAL — shared for projects, skills, contacts
+============================================================ -->
+    <div class="modal-overlay" id="modal-overlay" style="display:none">
+        <div class="modal-box" id="modal-box">
+            <div class="modal-header">
+                <h3 id="modal-title">Edit Item</h3>
+                <button class="modal-close" onclick="closeModal()">✕</button>
+            </div>
+            <div class="modal-body" id="modal-body"></div>
+            <div class="modal-footer">
+                <button class="admin-btn" onclick="closeModal()">Cancel</button>
+                <button class="admin-btn admin-btn--primary" id="modal-save-btn">Save</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================
+     SCRIPTS
+============================================================ -->
+    <script src="data.js"></script>
+    <script src="admin.js"></script>
+</body>
+
+</html>
