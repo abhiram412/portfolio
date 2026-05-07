@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abhiram Madaka | Embedded Engineer</title>
+
+    <!-- ============================================================
+         FONTS
+    ============================================================ -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ============================================================
+     NAVBAR
+============================================================ -->
+<nav class="navbar" id="navbar">
+    <a href="#home" class="nav-logo">AM<span class="nav-logo-dot">.</span></a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-menu" id="nav-menu">
+        <li><a href="#home"     class="nav-link">Home</a></li>
+        <li><a href="#about"    class="nav-link">About</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
+        <li><a href="#skills"   class="nav-link">Skills</a></li>
+        <li><a href="#contact"  class="nav-link contact-cta">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section id="home" class="hero">
+    <!-- Background decoration -->
+    <div class="hero-bg">
+        <div class="hero-blob hero-blob--1"></div>
+        <div class="hero-blob hero-blob--2"></div>
+        <div class="hero-grid"></div>
+    </div>
+
+    <div class="hero-content">
+        <!-- ── Profile photo ───────────────────────────────────────
+             HOW TO CHANGE YOUR PHOTO:
+             Replace "assets/profile.jpg" with your image path.
+             Or set the JS variable PROFILE_PHOTO in script.js.
+        ─────────────────────────────────────────────────────────── -->
+        <div class="hero-photo-wrapper">
+            <div class="hero-photo" id="hero-photo">
+                <!-- Fallback initials shown when no photo is set -->
+                <span class="hero-photo-initials">AM</span>
+            </div>
+            <div class="hero-photo-ring"></div>
+        </div>
+
+        <div class="hero-text">
+            <p class="hero-greeting">Hello, I'm</p>
+            <h1 class="hero-name">Abhiram<br>Madaka</h1>
+            <p class="hero-tagline">Future Embedded Engineer <span class="hero-sep">|</span> Problem Solver</p>
+            <p class="hero-intro">
+                I build real-world electronics and software solutions with
+                a focus on embedded systems and safety-driven innovation.
+            </p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn--primary">View Projects</a>
+                <a href="#contact"  class="btn btn--ghost">Get in Touch</a>
+            </div>
+        </div>
+    </div>
+
+    <a href="#about" class="hero-scroll" aria-label="Scroll down">
+        <span class="hero-scroll-line"></span>
+        <span class="hero-scroll-dot"></span>
+    </a>
+</section>
+
+<!-- ============================================================
+     WHAT I DO  (highlight strip)
+============================================================ -->
+<section class="what-i-do" aria-label="What I do">
+    <div class="container">
+        <div class="wid-grid">
+            <div class="wid-item reveal">
+                <span class="wid-icon">⚙️</span>
+                <h3>Embedded Systems</h3>
+                <p>Designing microcontroller-based solutions that bridge hardware and software.</p>
+            </div>
+            <div class="wid-item reveal">
+                <span class="wid-icon">🛡️</span>
+                <h3>Safety Applications</h3>
+                <p>Building smart emergency systems with reliable sensor-driven communication.</p>
+            </div>
+            <div class="wid-item reveal">
+                <span class="wid-icon">🤖</span>
+                <h3>AI Integration</h3>
+                <p>Creating intelligent assistants that bring voice and automation to everyday tasks.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     ABOUT
+============================================================ -->
+<section id="about" class="about">
+    <div class="container about-inner">
+        <div class="about-photo-col reveal">
+            <div class="about-photo" id="about-photo">
+                <span class="about-photo-initials">AM</span>
+            </div>
+            <div class="about-photo-accent"></div>
+        </div>
+
+        <div class="about-text-col reveal">
+            <span class="section-tag">About Me</span>
+            <h2 class="section-title">Passionate about<br>Electronics & Code</h2>
+            <p>
+                I'm an ECE student with a deep passion for Embedded Systems and real-world
+                problem solving. I enjoy bridging the gap between software and hardware to
+                create practical, impactful solutions — from AI-powered voice assistants to
+                smart emergency alert systems.
+            </p>
+            <p>
+                My goal is to engineer products that make people safer, smarter, and more
+                connected — one circuit at a time.
+            </p>
+            <div class="about-stats">
+                <div class="stat">
+                    <strong>2+</strong>
+                    <span>Projects Built</span>
+                </div>
+                <div class="stat">
+                    <strong>ECE</strong>
+                    <span>Specialisation</span>
+                </div>
+                <div class="stat">
+                    <strong>100%</strong>
+                    <span>Passion-Driven</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     PROJECTS
+     ── HOW TO ADD A PROJECT ──────────────────────────────────
+     Copy one <article class="project-card"> block, update the
+     data-index attribute (+1 each time), and fill in your info.
+     ──────────────────────────────────────────────────────────
+============================================================ -->
+<section id="projects" class="projects">
+    <div class="container">
+        <span class="section-tag section-tag--center">Work</span>
+        <h2 class="section-title section-title--center">Featured Projects</h2>
+
+        <div class="projects-grid">
+
+            <!-- Project 1 -->
+            <article class="project-card reveal" data-index="01">
+                <div class="project-card-header">
+                    <span class="project-number">01</span>
+                    <div class="project-links-top">
+                        <a href="https://github.com/abhiram412" target="_blank" rel="noopener" aria-label="View on GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <h3 class="project-title">AI Assistant</h3>
+                <p class="project-desc">
+                    Built a Python-based AI assistant capable of voice interaction and
+                    opening applications like YouTube on command.
+                </p>
+                <div class="project-tags">
+                    <span>Python</span>
+                    <span>Voice AI</span>
+                    <span>Automation</span>
+                </div>
+                <a href="https://github.com/abhiram412" target="_blank" rel="noopener" class="project-cta">
+                    View Code <span aria-hidden="true">→</span>
+                </a>
+            </article>
+
+            <!-- Project 2 -->
+            <article class="project-card reveal" data-index="02">
+                <div class="project-card-header">
+                    <span class="project-number">02</span>
+                    <div class="project-links-top">
+                        <a href="https://github.com/abhiram412" target="_blank" rel="noopener" aria-label="View on GitHub">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <h3 class="project-title">SOS Emergency System</h3>
+                <p class="project-desc">
+                    Designed a smart SOS emergency system that automatically sends alerts
+                    during accidents — detects falls and network changes for reliable critical
+                    communication.
+                </p>
+                <div class="project-tags">
+                    <span>Embedded C</span>
+                    <span>Arduino</span>
+                    <span>IoT</span>
+                </div>
+                <a href="https://github.com/abhiram412" target="_blank" rel="noopener" class="project-cta">
+                    View Code <span aria-hidden="true">→</span>
+                </a>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     SKILLS
+     ── HOW TO EDIT ──────────────────────────────────────────
+     Edit skill names and progress values in script.js under
+     the SKILLS_DATA array. No HTML changes needed.
+     ──────────────────────────────────────────────────────────
+============================================================ -->
+<section id="skills" class="skills">
+    <div class="container">
+        <span class="section-tag section-tag--center">Expertise</span>
+        <h2 class="section-title section-title--center">Skills &amp; Tools</h2>
+
+        <div class="skills-grid" id="skills-grid">
+            <!-- Injected by script.js -->
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     CONTACT
+============================================================ -->
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="contact-inner reveal">
+            <div class="contact-text">
+                <span class="section-tag">Let's Connect</span>
+                <h2 class="section-title">Have a project<br>in mind?</h2>
+                <p>
+                    I'm currently open to internships, collaborations, and exciting
+                    embedded systems projects. Drop me a message — I'd love to talk!
+                </p>
+                <a href="mailto:abhirammadaka70@gmail.com" class="btn btn--primary">Send an Email</a>
+            </div>
+
+            <div class="contact-links-col">
+                <!-- ── CONTACT LINKS ──────────────────────────────────
+                     To add/change a link, edit script.js CONTACT_LINKS.
+                ─────────────────────────────────────────────────────── -->
+                <div class="contact-links" id="contact-links">
+                    <!-- Injected by script.js -->
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="footer">
+    <div class="container footer-inner">
+        <span class="nav-logo">AM<span class="nav-logo-dot">.</span></span>
+        <p>© 2026 Abhiram Madaka. All rights reserved.</p>
+        <p class="footer-sub">Built with ♥ and lots of coffee</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
